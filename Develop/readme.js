@@ -2,6 +2,7 @@
 function generateBadgeUrl(licence){
     return `https://img.shields.io/badge/licence-${encodeURIComponent(licence)}-blueviolet`;
 }
+// create function to show license details when selected
 function generateLicenseInfo(licence){
     if (licence === "GNU GPLv3"){
         return "Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights."
@@ -13,8 +14,10 @@ function generateLicenseInfo(licence){
         return "A license with no conditions whatsoever which dedicates works to the public domain. Unlicensed works, modifications, and larger works may be distributed under different terms and without source code."
     }
 }
-
+// generate the readme, based on the answers provided by the user
 function generateReadme(answers) {
+    
+// project title, description, license choice, table of contents, installation, usage, contribution info, questions, test instructions
 return `# ${answers.projecttitle}
 
 ## Project Description
@@ -28,7 +31,7 @@ This project is licensed under a ${answers.license} License. ${generateLicenseIn
     
    - [Installation Instructions](#installation-instructions) 
    - [Usage Information](#usage-information) 
-   - [Contribution Guidelines](#contribution-guidelines) 
+   - [Contribution Information](#contribution-information) 
    - [Questions](#questions) 
    - [Test Instructions](#test-instructions) 
 
