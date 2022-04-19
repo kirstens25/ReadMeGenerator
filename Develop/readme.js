@@ -5,39 +5,35 @@ function generateBadgeUrl(license){
 function generateReadme(answers) {
     return `# ${answers.projecttitle}
 
-    ## Project Description
+## Project Description
     ${answers.projectdescription}
     
-    ## License
+## License
     ![This project is licensed under](${generateBadgeUrl(answers.license)}).
+
+## Table of Contents
     
-
-    ## Table of Contents
-    
-   - [Installation Instructions](#Installation-Instructions) 
-   - [Usage Information](#Usage-Information) 
-   - [License](#License) 
-   - [Contribution Guidelines](#Contribution-Guidelines) 
-   - [Questions](#Questions) 
-   - [Test Instructions](#Test-Instructions) 
+   - [Installation Instructions](#installation-instructions) 
+   - [Usage Information](#usage-information) 
+   - [Contribution Guidelines](#contribution-guidelines) 
+   - [Questions](#questions) 
+   - [Test Instructions](#test-instructions) 
 
 
-    ## Installation Instructions
+## Installation Instructions
     ${answers.installation}    
    
-    ## Usage Information
+## Usage Information
     ${answers.usage}    
 
-
-    ## Contribution Information
+## Contribution Information
     Contributors on this project are:
     ${answers.contribute} - www.github.com/${answers.contribute}
 
-    ## Questions
+## Questions
     If you have any questions about this project, please contact the project creator: ${answers.contribute} via email at ${answers.email}.
 
-
-    ## Test Instructions
+## Test Instructions
     ${answers.test}`   
     
     }
