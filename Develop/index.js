@@ -21,11 +21,9 @@ inquirer.prompt([
         type: 'list',
         message: 'Which license would you like your project to have?',
         choices: [
-            'GNU AGPLv3',
             'GNU GPLv3',
-            'GNU LGPLv3',
             'MIT',
-            'The Unlicense',
+            'Unlicense',
         ],
         name: 'license',
     },

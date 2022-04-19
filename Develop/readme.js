@@ -1,15 +1,28 @@
-function generateBadgeUrl(license){
-   return `https://img.shields.io/badge/License-${encodeURIComponent(license)}-blueviolet`;
-};
+// create function to source correct badge url, based on selected license
+function generateBadgeUrl(licence){
+    return `https://img.shields.io/badge/licence-${encodeURIComponent(licence)}-blueviolet`;
+}
+function generateLicenseInfo(licence){
+    if (licence === "GNU GPLv3"){
+        return "Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights."
+    };
+    if (licence === "MIT"){
+        return "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code."
+    };
+    if (licence === "Unlicence") {
+        return "A license with no conditions whatsoever which dedicates works to the public domain. Unlicensed works, modifications, and larger works may be distributed under different terms and without source code."
+    }
+}
 
 function generateReadme(answers) {
-    return `# ${answers.projecttitle}
+return `# ${answers.projecttitle}
 
 ## Project Description
-    ${answers.projectdescription}
+${answers.projectdescription}
     
 ## License
-    ![This project is licensed under](${generateBadgeUrl(answers.license)}).
+![License](${generateBadgeUrl(answers.license)})
+This project is licensed under a ${answers.license} License. ${generateLicenseInfo(answers.license)}.
 
 ## Table of Contents
     
@@ -21,30 +34,24 @@ function generateReadme(answers) {
 
 
 ## Installation Instructions
-    ${answers.installation}    
+${answers.installation}    
    
 ## Usage Information
-    ${answers.usage}    
+${answers.usage}    
 
 ## Contribution Information
-    Contributors on this project are:
-    ${answers.contribute} - www.github.com/${answers.contribute}
+Contributors on this project are:
+${answers.contribute} - www.github.com/${answers.contribute}
 
 ## Questions
-    If you have any questions about this project, please contact the project creator: ${answers.contribute} via email at ${answers.email}.
+If you have any questions about this project, please contact the project creator: ${answers.contribute} via email at ${answers.email}.
 
 ## Test Instructions
-    ${answers.test}`   
+${answers.test}`   
     
     }
-
+// generate the readme file
     module.exports = {
         generateReadme
     
 }
-
-// ## Badges
-    
-//     ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-    
-//     Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
